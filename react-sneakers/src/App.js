@@ -12,7 +12,7 @@ const arr = [
   {
     id: 1,
     imageUrl: "/img/sneakers/2.jpg",
-    title: "Nike Air Max 270",
+    title: "Nike Air Max 270 Future",
     price: 15600,
   },
   {
