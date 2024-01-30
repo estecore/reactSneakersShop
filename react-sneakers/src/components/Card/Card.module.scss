@@ -4,6 +4,7 @@
   padding: 30px;
   width: 220px;
   margin-right: 30px;
+  margin-bottom: 30px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
@@ -29,5 +30,9 @@
   h5 {
     font-weight: 400;
     font-size: 14px;
+  }
+
+  .plus {
+    cursor: pointer;
   }
 }
