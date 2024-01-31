@@ -64,8 +64,16 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    axios.post("/cart", obj);
-    setCartItems((prev) => [...prev, obj]);
+    try {
+      if (cartItems.find((item) => item.id === obj.id)) {
+        setCartItems((prev) => prev.filter((item) => item.id !== obj.id));
+      } else {
+        axios.post("/cart", obj);
+        setCartItems((prev) => [...prev, obj]);
+      }
+    } catch (error) {
+      alert("Не удалось что-то с добавлением в корзину(");
+    }
   };
   const onRemoveItem = (id) => {
     axios.delete(`/cart/${id}`);
