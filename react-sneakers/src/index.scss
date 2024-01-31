@@ -68,4 +68,8 @@ body {
   &:active {
     background: darken(#ffa749, 10%);
   }
+  &:disabled {
+    background: #bebebe !important;
+    cursor: not-allowed;
+  }
 }
