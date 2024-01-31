@@ -7,12 +7,14 @@ import styles from "./Drawer.module.scss";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export default function Drawer({ items, onRemove }) {
+export default function Drawer({ items, onRemove, opened }) {
   const { cartItems, setCartOpened, setCartItems } =
     React.useContext(AppContext);
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
 
   const onClickOrder = async () => {
     try {
@@ -34,7 +36,7 @@ export default function Drawer({ items, onRemove }) {
   };
 
   return (
-    <div className={styles.overlay}>
+    <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ""}`}>
       <div className={styles.drawer}>
         <h2 className="mb-30">
           Корзина
@@ -78,12 +80,12 @@ export default function Drawer({ items, onRemove }) {
                 <li>
                   <span>Итого:</span>
                   <div></div>
-                  <b>21 498 руб.</b>
+                  <b>{totalPrice} руб.</b>
                 </li>
                 <li>
                   <span>Налог 5%:</span>
                   <div></div>
-                  <b>1074 руб.</b>
+                  <b>{Math.round(totalPrice * 0.05)} руб.</b>
                 </li>
               </ul>
               <button

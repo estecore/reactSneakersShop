@@ -18,7 +18,7 @@ export default function Card({
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
   const onClickPlus = () => {
-    onPlus({ id, imageUrl, title, price });
+    onPlus({ id, parentId: id, imageUrl, title, price });
   };
   const onClickFavorite = () => {
     onFavorite({ id, imageUrl, title, price });
@@ -45,10 +45,12 @@ export default function Card({
       ) : (
         <>
           <div onClick={onClickFavorite} className={styles.favorite}>
-            <img
-              src={`${isFavorite ? "/img/liked.svg" : "/img/unliked.svg"}`}
-              alt="unliked"
-            />
+            {onFavorite && (
+              <img
+                src={`${isFavorite ? "/img/liked.svg" : "/img/unliked.svg"}`}
+                alt="unliked"
+              />
+            )}
           </div>
           <img width="100%" height={135} src={imageUrl} alt="sneakers"></img>
           <h5>{title}</h5>
@@ -57,14 +59,16 @@ export default function Card({
               <span>Цена:</span>
               <b>{price} руб.</b>
             </div>
-            <img
-              className={styles.plus}
-              onClick={onClickPlus}
-              src={
-                isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"
-              }
-              alt="plus"
-            />
+            {onPlus && (
+              <img
+                className={styles.plus}
+                onClick={onClickPlus}
+                src={
+                  isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"
+                }
+                alt="plus"
+              />
+            )}
           </div>
         </>
       )}
