@@ -1,5 +1,5 @@
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -23,6 +23,7 @@
 }
 
 .drawer {
+  overflow: auto;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -89,6 +90,7 @@
 
     img {
       position: absolute;
+      transform: rotate(0deg);
       right: 30px;
       top: 20px;
       transition: transform 0.15s ease-in-out;
@@ -102,24 +104,6 @@
   p {
     width: 280px;
     line-height: 24px;
-  }
-
-  .orangeButton {
-    margin-top: 20px;
-
-    &:hover {
-      img {
-        transform: rotate(180deg) translateX(5px);
-      }
-    }
-
-    img {
-      position: relative;
-      top: 1px;
-      transform: rotate(180deg);
-      margin-right: 15px;
-      transition: transform 0.15s ease-in-out;
-    }
   }
 }
 
