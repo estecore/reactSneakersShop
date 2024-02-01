@@ -4,43 +4,58 @@ import { Route, Routes } from "react-router-dom";
 
 import Drawer from "./components/Drawer";
 import Header from "./components/Header";
+
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
+
 import AppContext from "./context";
 
-/* {"id":0,
-// "imageUrl":"/img/sneakers/1.jpg",
-// "title":"Nike Blazer Mid Suede",
-// "price":12999},
-// {"id":1,
-// "imageUrl":"/img/sneakers/2.jpg",
-// "title":"Nike Air Max 270 Centurion",
-// "price":15600},
-// {"id":2,
-// "imageUrl":"/img/sneakers/3.jpg",
-// "title":"Puma X Aka Boku Future Rider",
-// "price":8499},
-// {"id":3,
-// "imageUrl":"/img/sneakers/4.jpg",
-// "title":"Nike Kyrie 7 Middle New",
-// "price":8999},
-// {"id":4,
-// "imageUrl":"/img/sneakers/5.jpg",
-// "title":"Nike LeBron XVIII Fox",
-// "price":5344},
-// {"id":5,
-// "imageUrl":"/img/sneakers/6.jpg",
-// "title":"Nike Blazer Mid Suede",
-// "price":18900},
-// {"id":6,
-// "imageUrl":"/img/sneakers/7.jpg",
-// "title":"Puma X Aka Boku Future Rider",
-/ "price":7800}
-*/
-
 function App() {
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState([
+    {
+      id: 0,
+      imageUrl: "/img/sneakers/1.jpg",
+      title: "Nike Blazer Mid Suede",
+      price: 12999,
+    },
+    {
+      id: 1,
+      imageUrl: "/img/sneakers/2.jpg",
+      title: "Nike Air Max 270 Centurion",
+      price: 15600,
+    },
+    {
+      id: 2,
+      imageUrl: "/img/sneakers/3.jpg",
+      title: "Puma X Aka Boku Future Rider",
+      price: 8499,
+    },
+    {
+      id: 3,
+      imageUrl: "/img/sneakers/4.jpg",
+      title: "Nike Kyrie 7 Middle New",
+      price: 8999,
+    },
+    {
+      id: 4,
+      imageUrl: "/img/sneakers/5.jpg",
+      title: "Nike LeBron XVIII Fox",
+      price: 5344,
+    },
+    {
+      id: 5,
+      imageUrl: "/img/sneakers/6.jpg",
+      title: "Nike Blazer Mid Suede",
+      price: 18900,
+    },
+    {
+      id: 6,
+      imageUrl: "/img/sneakers/7.jpg",
+      title: "Puma X Aka Boku Future Rider",
+      price: 7800,
+    },
+  ]);
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState("");
@@ -48,14 +63,6 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // fetch("/items")
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((json) => {
-    //     setItems(json);
-    //   });
-
     async function fetchData() {
       try {
         // const [cartResponse, favoritesResponse, itemsResponse] =
@@ -64,15 +71,15 @@ function App() {
         //     axios.get("/favorites"),
         //     axios.get("/items"),
         //   ]);
-        const cartResponse = await axios.get("/cart");
+        // const cartResponse = await axios.get("/cart");
         // const favoritesResponse = await axios.get("/favorites");
-        const itemsResponse = await axios.get("/items");
+        // const itemsResponse = await axios.get("/items");
 
         setIsLoading(false);
 
-        setCartItems(cartResponse.data);
+        // setCartItems(cartResponse.data);
         //   setFavorites(favoritesResponse.data);
-        setItems(itemsResponse.data);
+        // setItems(itemsResponse.data);
       } catch (error) {
         alert("Ошибка при запросе данных..");
         console.log(error);
@@ -91,7 +98,7 @@ function App() {
         setCartItems((prev) =>
           prev.filter((item) => Number(item.parentId) !== Number(obj.id))
         );
-        await axios.delete(`/cart/${findItem.id}`);
+        // await axios.delete(`/cart/${findItem.id}`);
       } else {
         setCartItems((prev) => [...prev, obj]);
         const { data } = await axios.post("/cart", obj);
@@ -114,7 +121,7 @@ function App() {
 
   const onRemoveItem = async (id) => {
     try {
-      await axios.delete(`/cart/${id}`);
+      // await axios.delete(`/cart/${id}`);
       setCartItems((prev) =>
         prev.filter((item) => Number(item.id) !== Number(id))
       );

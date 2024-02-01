@@ -10,8 +10,8 @@ export default function Orders() {
   React.useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get("/cart");
-        setOrders(data.reduce((prev, obj) => [...prev, ...obj.item], []));
+        // const { data } = await axios.get("/cart");
+        // setOrders(data.reduce((prev, obj) => [...prev, ...obj.item], []));
         setIsLoading(false);
       } catch (error) {
         alert("Ошибка при запросе заказов.");
