@@ -47,12 +47,16 @@ export default function Card({
           <div onClick={onClickFavorite} className={styles.favorite}>
             {onFavorite && (
               <img
-                src={`${isFavorite ? "/img/liked.svg" : "/img/unliked.svg"}`}
+                src={`${
+                  isFavorite
+                    ? "https://estecore.github.io/reactSneakersShop/img/liked.svg"
+                    : "https://estecore.github.io/reactSneakersShop/img/unliked.svg"
+                }`}
                 alt="unliked"
               />
             )}
           </div>
-          <img width="100%" height={135} src={imageUrl} alt="sneakers"></img>
+          <img width="100%" height={135} src={imageUrl} alt="sneakers" />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
@@ -64,7 +68,9 @@ export default function Card({
                 className={styles.plus}
                 onClick={onClickPlus}
                 src={
-                  isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"
+                  isItemAdded(id)
+                    ? "https://estecore.github.io/reactSneakersShop/img/btn-checked.svg"
+                    : "https://estecore.github.io/reactSneakersShop/img/btn-plus.svg"
                 }
                 alt="plus"
               />

@@ -33,12 +33,15 @@ export default function Home({
           {searchValue ? `Поиск по запросу: "${searchValue}"` : "Все кроссовки"}
         </h1>
         <div className="search-block d-flex">
-          <img src="/img/search.svg" alt="search" />
+          <img
+            src="https://estecore.github.io/reactSneakersShop/img/search.svg"
+            alt="search"
+          />
           {searchValue && (
             <img
               onClick={() => setSearchValue("")}
               className="clear"
-              src="/img/btn-remove.svg"
+              src="https://estecore.github.io/reactSneakersShop/img/btn-remove.svg"
               alt="clear"
             />
           )}

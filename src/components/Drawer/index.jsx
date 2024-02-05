@@ -43,7 +43,7 @@ export default function Drawer({ items, onRemove, opened }) {
           <img
             onClick={() => setCartOpened(false)}
             className={styles.removeBtn}
-            src="/img/btn-remove.svg"
+            src="https://estecore.github.io/reactSneakersShop/img/btn-remove.svg"
             alt="close"
           />
         </h2>
@@ -69,7 +69,7 @@ export default function Drawer({ items, onRemove, opened }) {
                   <img
                     onClick={() => onRemove(obj.id)}
                     className={styles.removeBtn}
-                    src="/img/btn-remove.svg"
+                    src="https://estecore.github.io/reactSneakersShop/img/btn-remove.svg"
                     alt="remove"
                   />
                 </div>
@@ -93,7 +93,11 @@ export default function Drawer({ items, onRemove, opened }) {
                 onClick={onClickOrder}
                 className={`${styles.orangeButton} orangeButton`}
               >
-                Оформить заказ <img src="/img/arrow.svg" alt="arrow" />
+                Оформить заказ{" "}
+                <img
+                  src="https://estecore.github.io/reactSneakersShop/img/arrow.svg"
+                  alt="arrow"
+                />
               </button>
             </div>
           </div>
@@ -102,8 +106,8 @@ export default function Drawer({ items, onRemove, opened }) {
             title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"}
             image={
               isOrderComplete
-                ? "/img/complete-order.jpg"
-                : "/img/empty-cart.jpg"
+                ? "https://estecore.github.io/reactSneakersShop/img/complete-order.jpg"
+                : "https://estecore.github.io/reactSneakersShop/img/empty-cart.jpg"
             }
             description={
               isOrderComplete

@@ -16,7 +16,10 @@ export default function Info({ title, image, description }) {
         onClick={() => setCartOpened(false)}
         className={`${styles.orangeButton} orangeButton`}
       >
-        <img src="/img/arrow.svg" alt="arrow" />
+        <img
+          src="https://estecore.github.io/reactSneakersShop/img/arrow.svg"
+          alt="arrow"
+        />
         Вернуться назад
       </button>
     </div>

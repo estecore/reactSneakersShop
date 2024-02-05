@@ -28,12 +28,18 @@ export default function Favorites() {
           </div>
         ) : (
           <div className="empty_page d-flex flex-column align-center">
-            <img src="img/sad_favorites.svg" alt="sad" />
+            <img
+              src="https://estecore.github.io/reactSneakersShop/img/sad_favorites.svg"
+              alt="sad"
+            />
             <h2>Избранных нет..</h2>
             <p className="opacity-6">Вы ничего не избирали, а зря..</p>
-            <Link to="/">
+            <Link to="">
               <button className="orangeButton">
-                <img src="/img/arrow.svg" alt="arrow" />
+                <img
+                  src="https://estecore.github.io/reactSneakersShop/img/arrow.svg"
+                  alt="arrow"
+                />
                 Вернуться назад
               </button>
             </Link>

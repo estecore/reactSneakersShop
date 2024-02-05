@@ -15,43 +15,50 @@ function App() {
   const [items, setItems] = React.useState([
     {
       id: 0,
-      imageUrl: "/img/sneakers/1.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/1.jpg",
       title: "Nike Blazer Mid Suede",
       price: 12999,
     },
     {
       id: 1,
-      imageUrl: "/img/sneakers/2.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/2.jpg",
       title: "Nike Air Max 270 Centurion",
       price: 15600,
     },
     {
       id: 2,
-      imageUrl: "/img/sneakers/3.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/3.jpg",
       title: "Puma X Aka Boku Future Rider",
       price: 8499,
     },
     {
       id: 3,
-      imageUrl: "/img/sneakers/4.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/4.jpg",
       title: "Nike Kyrie 7 Middle New",
       price: 8999,
     },
     {
       id: 4,
-      imageUrl: "/img/sneakers/5.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/5.jpg",
       title: "Nike LeBron XVIII Fox",
       price: 5344,
     },
     {
       id: 5,
-      imageUrl: "/img/sneakers/6.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/6.jpg",
       title: "Nike Blazer Mid Suede",
       price: 18900,
     },
     {
       id: 6,
-      imageUrl: "/img/sneakers/7.jpg",
+      imageUrl:
+        "https://estecore.github.io/reactSneakersShop/img/sneakers/7.jpg",
       title: "Puma X Aka Boku Future Rider",
       price: 7800,
     },
@@ -174,7 +181,7 @@ function App() {
 
         <Routes>
           <Route
-            path="/"
+            path=""
             element={
               <Home
                 items={items}
@@ -188,9 +195,9 @@ function App() {
               />
             }
           />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="favorites" element={<Favorites />} />
 
-          <Route path="/orders" element={<Orders />} />
+          <Route path="orders" element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>

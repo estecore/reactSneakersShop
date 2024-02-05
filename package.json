@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://estecore.github.io/reactSneakersShop/",
-  "proxy": "https://65b7e2a246324d531d55b05c.mockapi.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
