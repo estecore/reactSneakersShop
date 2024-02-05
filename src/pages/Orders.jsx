@@ -41,7 +41,7 @@ export default function Orders() {
               Вы нищеброд? <br />
               Оформите хотя бы один заказ.
             </p>
-            <Link to="">
+            <Link to="/">
               <button className="orangeButton">
                 <img
                   src="https://estecore.github.io/reactSneakersShop/img/arrow.svg"

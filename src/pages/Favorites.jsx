@@ -34,7 +34,7 @@ export default function Favorites() {
             />
             <h2>Избранных нет..</h2>
             <p className="opacity-6">Вы ничего не избирали, а зря..</p>
-            <Link to="">
+            <Link to="/">
               <button className="orangeButton">
                 <img
                   src="https://estecore.github.io/reactSneakersShop/img/arrow.svg"
