@@ -10,3 +10,19 @@ header {
     margin: 0;
   }
 }
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+
+    a {
+      margin-bottom: 30px;
+
+      @media (max-width: 320px) {
+        & {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
